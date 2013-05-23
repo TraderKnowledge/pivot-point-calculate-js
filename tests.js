@@ -9,6 +9,21 @@ test("Test Pivot Point", function() {
 	
 });
 
-test( "hello test", function() {
-  ok( 1 == "1", "Passed!" );
+test("Not numbers", function() {
+	var pivot = new PivotPoint('a', 'b', 'c', 'd');
+	
+	equal(pivot.open, -1);
+	equal(pivot.high, -1);
+	equal(pivot.low, -1);
+	equal(pivot.close, -1);
+	
+	equal(pivot.resistance3, -1);
+	equal(pivot.resistance2, -1);
+	equal(pivot.resistance1, -1);
+	equal(pivot.pivotPoint, -1);
+	equal(pivot.support1, -1);
+	equal(pivot.support2, -1);
+	equal(pivot.support3, -1);
+	
 });
+
