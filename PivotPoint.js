@@ -38,15 +38,16 @@ function PivotPoint (open, high, low, close) {
 	
 	//calculate the pivot point
 	this.pivotPoint =  (this.high + this.low + this.close) / 3;
+	this.pivotPoint =  parseFloat(this.pivotPoint).toFixed(4);
 	
 	//calculate the resistance
-	this.resistance1 = (this.pivotPoint * 2) - this.low;
-	this.resistance2 = this.pivotPoint + (this.high - this.low);
-	this.resistance3 = this.high + (2*(this.pivotPoint - this.low));
+	this.resistance1 = parseFloat((this.pivotPoint * 2) - this.low).toFixed(4);
+	this.resistance2 = parseFloat(this.pivotPoint + (this.high - this.low)).toFixed(4);
+	this.resistance3 = parseFloat(this.pivotPoint + (2*(this.high - this.low))).toFixed(4);
 
 	//calculate the support
-	this.support1 = (this.pivotPoint * 2) - this.high;
-	this.support2 = this.pivotPoint - (this.high - this.low);
-	this.support3 =  this.low - (2*(this.high - this.pivotPoint));
+	this.support1 = parseFloat((this.pivotPoint * 2) - this.high).toFixed(4);
+	this.support2 = parseFloat(this.pivotPoint - (this.high - this.low)).toFixed(4);
+	this.support3 =  parseFloat(this.pivotPoint - (2*(this.high - this.low))).toFixed(4);
 	
 }

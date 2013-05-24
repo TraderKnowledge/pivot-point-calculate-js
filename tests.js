@@ -1,6 +1,11 @@
-test("Test Pivot Point", function() {
+test("Test Parameters", function() {
 	
-	var pivot = new PivotPoint(2, 4, 1, 3);
+	var o = 2;
+	var h = 4;
+	var l = 1;
+	var c = 3;
+	
+	var pivot = new PivotPoint(o, h, l, c);
 	
 	equal(pivot.open, 2);
 	equal(pivot.high, 4);
@@ -27,3 +32,21 @@ test("Not numbers", function() {
 	
 });
 
+test("Test Pivot Points", function() {
+	
+	var o = 2;
+	var h = 4;
+	var l = 1;
+	var c = 3;
+	
+	var pivot = new PivotPoint(o, h, l, c);
+	
+	equal(pivot.resistance3, 8.6667);
+	equal(pivot.resistance2, 5.6667);
+	equal(pivot.resistance1, 4.3334);
+	equal(pivot.pivotPoint, 2.6667);
+	equal(pivot.support1, 1.3334);
+	equal(pivot.support2, -0.3333);
+	equal(pivot.support3, -3.3333);
+	
+});
